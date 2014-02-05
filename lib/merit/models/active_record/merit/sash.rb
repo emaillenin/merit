@@ -34,7 +34,7 @@ module Merit
       scores.where(category: category).first.points
     end
 
-    def add_points(num_points, log = 'Manually granted', category = 'default')
+    def add_points(num_points, category = 'default', log = 'Manually granted')
       point = Merit::Score::Point.new
       point.log = log
       point.num_points = num_points

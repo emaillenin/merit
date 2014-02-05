@@ -26,7 +26,7 @@ module Merit
     def apply_points
       return unless rule_applies?
       @sashes.each do |sash|
-        point = sash.add_points points
+        point = sash.add_points points, category
         notify_observers(@action.id, point)
       end
     end
@@ -66,6 +66,10 @@ module Merit
       else
         @rule.score
       end
+    end
+
+    def category
+      @rule.category
     end
 
     def badge

@@ -8,7 +8,7 @@ module Merit
 
     def initialize
       # Thanks for voting point
-      score 1, on: 'comments#vote'
+      score 1, on: 'comments#vote', category: 'stories'
 
       # All user's comments earn points
       score 2, to: :user_comments, on: 'comments#vote'
